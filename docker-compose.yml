@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+  web:
+    image: nginx:1.17
+    ports:
+      - "1212:80"
+    volumes:
+      - ./:/var/www
+      - ./nginx/:/etc/nginx/conf.d/
+      - ./nginx/logs:/var/log/nginx
+    depends_on:
+      - php
+    restart: unless-stopped
+    networks:
+      - php-playground
+
+  php:
+    image: php:7.2-fpm
+    volumes:
+      - ./:/var/www
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - php-playground
+
+networks:
+  php-playground:
+    driver: bridge
