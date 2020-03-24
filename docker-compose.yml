@@ -7,8 +7,8 @@ services:
       - "1212:80"
     volumes:
       - ./:/var/www
-      - ./nginx/:/etc/nginx/conf.d/
-      - ./nginx/logs:/var/log/nginx
+      - ./:/etc/nginx/conf.d/
+      - ./logs/nginx:/var/log/nginx
     depends_on:
       - php
     restart: unless-stopped
