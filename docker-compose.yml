@@ -7,7 +7,7 @@ services:
       - "1212:80"
     volumes:
       - ./:/var/www
-      - ./:/etc/nginx/conf.d/
+      - ./config/:/etc/nginx/conf.d/
       - ./logs/nginx:/var/log/nginx
     depends_on:
       - php
