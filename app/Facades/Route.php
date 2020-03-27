@@ -35,16 +35,16 @@ class Route
     }
 
     public static function resolve(Request $request) {
-        var_dump(self::$handlers);
-        var_dump($request->path(), $request->method());
         if (!isset(self::$handlers[$request->method()][$request->path()])) {
             throw new PageNotFoundException();
         }
 
-        if (!is_callable(self::$handlers[$request->method()][$request->path()])) {
-            throw new InternalServerErrorException();
+        if (is_callable(self::$handlers[$request->method()][$request->path()])) {
+            return (self::$handlers[$request->method()][$request->path()])();
+        } elseif (is_string(self::$handlers[$request->method()][$request->path()])) {
+            return self::$handlers[$request->method()][$request->path()];
         }
 
-        return (self::$handlers[$request->method()][$request->path()])();
+        throw new InternalServerErrorException();
     }
 }
