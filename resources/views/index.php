@@ -172,7 +172,7 @@ docker-compose up -d</pre>
                     $classes = 'card ' . ($col === 1 ? 'raised' : '');
                     echo <<<HEREDOC
                     <div class="col-md-4" data-aos="fade-up">
-                        <a class="card-link" href="#">
+                        <a class="card-link" href="/tasks/{$card['number']}">
                             <div class="$classes">
                                 <h4>{$card['number']}</h4>
                                 <h5>{$card['caption']}</h5>
@@ -197,7 +197,7 @@ HEREDOC;
             </div>
             <div class="row">
                 <div class="d-flex footer-container">
-                    <h3>shadow<span class="color-black">labs</span><span class="color-black dot" data-aos>.</span></h3>
+                    <h3>shadow<span class="color-black">labs</span><span class="color-black dot" data-aos></span></h3>
                     <p><a href="#top"><i class="fas fa-level-up-alt"></i>Вернуться наверх</a></p>
                     <p><a href="https://github.com/shadowusr/u-web-labs" target="_blank"><i class="fab fa-github"></i>Перейти на GitHub</a></p>
                 </div>
