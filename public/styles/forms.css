@@ -1,0 +1,54 @@
+.form-caption, form {
+    font-family: Nunito;
+}
+
+.form-caption {
+    color: #a5fde5;
+    font-size: 1.3rem;
+}
+
+form label {
+    color: rgba(255, 255, 255, .9);
+}
+
+form input {
+    margin: 5px;
+    width: 100%;
+    background-color: #131b3c;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, .2);
+    padding: 5px 10px;
+    transition: all .3s ease-in-out;
+    color: rgba(255, 255, 255, .8);
+}
+
+form input:hover {
+    background-color: #1f2748;
+}
+
+form input:focus {
+    background-color: #131b3c;
+    border: 1px solid #a5fde5;
+    outline: none;
+}
+
+form input[type=submit] {
+    margin: 10px 10px 10px auto;
+    padding: 5px 15px;
+    width: auto;
+    background: linear-gradient(90deg, rgba(78,68,249,1) 0%, #2abfd0 100%);
+    border: none;
+    box-shadow: 0px 0px 25px -5px rgba(0,0,0,0.3);
+    transition: margin .2s ease;
+}
+
+form input[type=submit]:hover {
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+form input[type=submit]:active {
+    margin-top: 11px;
+    margin-bottom: 9px;
+    box-shadow: none;
+}

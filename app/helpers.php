@@ -1,6 +1,6 @@
 <?php
 
-function view($name) {
+function view($name, $args = []) {
     if (strpos($name, '.') !== false) { // Preventing from accidental injections
         throw new \App\Exceptions\InvalidFormatException();
     }
