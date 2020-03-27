@@ -98,6 +98,9 @@ docker-compose up -d</pre>
                 $card = $cards[$row * 3 + $col];
                 $card['description'] = mb_substr($card['description'], 0, rand(80, 140)) . '...';
                 $classes = 'card ' . ($col === 1 ? 'raised' : '');
+                if (!file_exists(__DIR__ . '/tasks/task-' . $card['number'] . '.php')) {
+                    $classes .= ' inactive';
+                }
                 echo <<<HEREDOC
                     <div class="col-md-4" data-aos="fade-up">
                         <a class="card-link" href="/tasks/{$card['number']}">
@@ -116,3 +119,61 @@ HEREDOC;
         ?>
     </div>
 </section>
+<style>
+    .card.inactive {
+        background-color: #4b5263;
+        border: 2px solid rgba(255, 255, 255, .8);
+    }
+
+    .card.inactive:hover {
+        background-color: #5b6273;
+    }
+
+    .card.inactive > h4, .card.inactive h5 {
+        color: rgba(255, 255, 255, .8);
+    }
+
+    .card.inactive > p {
+        color: #2a3944;
+    }
+
+    @keyframes shake {
+        0% {
+            left: 0;
+        }
+        16% {
+            left: 7px;
+        }
+        32% {
+            left: -6px;
+        }
+        48% {
+            left: 4px;
+        }
+        64% {
+            left: -3px;
+        }
+        80% {
+            left: 2px;
+        }
+        100% {
+            left: -1px;
+        }
+    }
+</style>
+<script>
+    let elements = document.getElementsByClassName('inactive');
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].addEventListener('click', e => {
+            e.preventDefault();
+            let el = e.target;
+            while (el.tagName != 'DIV') {
+                el = el.parentElement;
+            }
+            el.style['animation'] = 'shake 1s ease-in-out';
+            setTimeout(() => {
+                el.style.animation = 'none';
+            }, 1000);
+        })
+    }
+</script>

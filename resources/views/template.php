@@ -34,20 +34,23 @@
         <div class="container position-relative">
             <div class="row">
                 <div class="col">
-                    <svg viewBox="0 0 900 310">
-                        <symbol id="s-text">
-                            <text text-anchor="start" x="0" y="130">shadow</text>
-                            <text text-anchor="end" x="900" y="300">labs.</text>
-                        </symbol>
+                    <a href="/">
+                        <svg viewBox="0 0 900 310">
 
-                        <g class="g-ants">
-                            <use xlink:href="#s-text" class="text-copy"></use>
-                            <use xlink:href="#s-text" class="text-copy"></use>
-                            <use xlink:href="#s-text" class="text-copy"></use>
-                            <use xlink:href="#s-text" class="text-copy"></use>
-                            <use xlink:href="#s-text" class="text-copy"></use>
-                        </g>
-                    </svg>
+                            <symbol id="s-text">
+                                <text text-anchor="start" x="0" y="130">shadow</text>
+                                <text text-anchor="end" x="900" y="300">labs.</text>
+                            </symbol>
+
+                            <g class="g-ants">
+                                <use xlink:href="#s-text" class="text-copy"></use>
+                                <use xlink:href="#s-text" class="text-copy"></use>
+                                <use xlink:href="#s-text" class="text-copy"></use>
+                                <use xlink:href="#s-text" class="text-copy"></use>
+                                <use xlink:href="#s-text" class="text-copy"></use>
+                            </g>
+                        </svg>
+                    </a>
                 </div>
                 <svg class="triangle triangle-top" viewBox="0 0 500 500" preserveAspectRatio="none">
                     <polygon points="0,0 0,500 500,500"  />
