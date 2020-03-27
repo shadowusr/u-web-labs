@@ -22,7 +22,12 @@ services:
       - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
       - php-playground
-
+  composer:
+    image: composer
+    restart: 'no'
+    command: 'install'
+    volumes:
+    - ./:/app
 networks:
   php-playground:
     driver: bridge
