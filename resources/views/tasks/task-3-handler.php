@@ -140,6 +140,7 @@ HEREDOC;
                 <h3 class="heading-underlined">Ответ</h3>
                 <p><?= $result ?></p>
             </div>
+            <a class="mx-auto my-2 link-clear" href="/tasks/3" data-aos="fade-up"><button><i class="fas fa-arrow-left mr-2"></i>Ввести другие данные</button></a>
         </div>
         <div class="row">
             <div class="col-12" >

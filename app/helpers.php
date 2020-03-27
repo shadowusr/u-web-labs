@@ -4,6 +4,7 @@ function view($name, $args = []) {
     if (strpos($name, '.') !== false) { // Preventing from accidental injections
         throw new \App\Exceptions\InvalidFormatException();
     }
+
     if (!file_exists(__DIR__ . '/../resources/views/' . $name . '.php')) {
         throw new \App\Exceptions\InternalServerErrorException();
     }

@@ -456,3 +456,8 @@ footer span.dot.aos-animate {
     100%{color: #195fff
     }
 }
+
+.link-clear {
+    text-decoration: none;
+    outline: none;
+}

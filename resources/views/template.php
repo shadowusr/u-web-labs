@@ -1,5 +1,16 @@
 <!doctype html>
 <html id="top">
+<!--
+Ребята, не стоит вскрывать этот код.
+Вы молодые, шутливые, вам все легко.
+Это не то.
+Это не Чикатило и даже не архивы спецслужб.
+Сюда лучше не лезть.
+Серьезно, любой из вас будет жалеть.
+Лучше закройте код и забудьте, что тут писалось.
+Я вполне понимаю, что данным сообщением вызову дополнительный интерес, но хочу сразу предостеречь пытливых - стоп.
+Остальные просто не найдут.
+-->
 <head>
     <title>Test title</title>
     <meta charset="utf-8">
@@ -9,6 +20,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles/app.css">
     <link rel="stylesheet" href="/styles/forms.css">
+    <link rel="stylesheet" href="/styles/buttons.css">
+    <link rel="stylesheet" href="/styles/tables.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
     <body>
@@ -34,7 +47,7 @@
         <div class="container position-relative">
             <div class="row">
                 <div class="col">
-                    <a href="/">
+                    <a class="text-decoration-none" href="/">
                         <svg viewBox="0 0 900 310">
 
                             <symbol id="s-text">
@@ -69,10 +82,11 @@
                 </svg>
             </div>
             <div class="row">
-                <div class="d-flex footer-container">
+                <div class="d-flex footer-container pr-2">
                     <h3>shadow<span class="color-black">labs</span><span class="color-black dot" data-aos></span></h3>
                     <p><a href="#top"><i class="fas fa-level-up-alt"></i>Вернуться наверх</a></p>
                     <p><a href="https://github.com/shadowusr/u-web-labs" target="_blank"><i class="fab fa-github"></i>Перейти на GitHub</a></p>
+                    <p><a href="https://minecraft.net"><img src="/images/minecraft.png" class="footer-minecraft-icon">Самый лучший сайт</a></p>
                 </div>
             </div>
         </div>
@@ -86,5 +100,12 @@
             //animatedClassName: 'animated',
         });
     </script>
+    <style>
+        .footer-minecraft-icon {
+            height: 20px;
+            margin-top: -4px;
+            margin-right: 5px;
+        }
+    </style>
 </body>
 </html>

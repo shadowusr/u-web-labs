@@ -1,0 +1,26 @@
+button {
+    padding: 5px 15px;
+    width: auto;
+    background: linear-gradient(90deg, rgba(78,68,249,1) 0%, #2abfd0 100%);
+    border: none;
+    box-shadow: 0 0 25px -5px rgba(0,0,0,0.3);
+    transition: margin .2s ease;
+    font-family: Nunito, sans-serif;
+    border-radius: 3px;
+    color: #fff;
+}
+
+button:hover {
+    margin-top: -2px;
+    margin-bottom: 2px;
+}
+
+button:active {
+    outline: none;
+    margin-top: 1px;
+    margin-bottom: -1px;
+}
+
+button:focus {
+    outline: none;
+}
