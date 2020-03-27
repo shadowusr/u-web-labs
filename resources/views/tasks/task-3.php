@@ -85,7 +85,7 @@ HEREDOC;
         <div class="row">
             <div class="col-12" >
                 <h3 class="heading-underlined" data-aos="fade-up">Исходный код</h3>
-                <p data-aos="fade-up">Исходный код страницы доступен на <a href="https://github.com/https://github.com/shadowusr/u-web-labs/tree/master/resources/views/tasks/task-3.php">GitHub</a>.</p>
+                <p data-aos="fade-up">Исходный код страницы доступен на <a href="https://github.com/shadowusr/u-web-labs/tree/master/resources/views/tasks/task-3.php">GitHub</a>.</p>
             </div>
         </div>
     </div>
