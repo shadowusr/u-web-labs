@@ -28,11 +28,7 @@ if (!isset($items[$_GET['index']])) {
     $status = nl2br("Один или несколько параметров некорректны. Требования:\n- name и type должны быть непустыми строками, непревышающими длину в 128 знаков.\n- price должен быть числом.");
 } else {
     $success = true;
-    echo '<pre>';
-    var_dump($items[$_GET['index']], count($items), $items);
     $items[$_GET['index']] = $newItem;
-    var_dump(count($items), $items);
-    echo '</pre>';
     file_put_contents(__DIR__ . '/../../files/' . $_COOKIE['client-id'] . '-task-4-data.json', json_encode($items));
     $newItem['name'] = htmlentities($newItem['name'], ENT_QUOTES);
     $status = "Запись с названием \"{$newItem['name']}\" успешно сохранена";

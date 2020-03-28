@@ -3,6 +3,9 @@
 /node_modules
 /vendor
 
+# Temp files
+/resources/files
+
 # Logs
 logs
 *.log

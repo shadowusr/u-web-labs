@@ -1,7 +1,7 @@
 # README #
 
 ### Shadow Web Labs ###
-This repository contains a that project which I wrote for my university. This was a quick one, so there're a lot of things to be improved. And yes. CSS code quality is absolutely awful, but it just works. Some day this can be fixed. Some day.
+This repository contains a small project that I wrote for my university. This was a quick one, so there're a lot of things to be improved. And yes. CSS code quality is absolutely awful, but it just works. Some day this can be fixed. Some day.
 
 Live demo: https://shadow-web-labs.herokuapp.com
 
