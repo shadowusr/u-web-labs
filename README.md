@@ -13,6 +13,6 @@ git clone https://github.com/shadowusr/u-web-labs.git &&
 cd u-web-labs &&
 docker-compose up -d
 ```
-Git and Docker Composed are required. The app will be launched on `localhost:1212`, but you can alter this address in the `docker-compose.yml` file.
+Git and Docker Compose are required. The app will be launched on `localhost:1212`, but you can alter this address in the `docker-compose.yml` file.
 
 By the way, this project entirely lacks i18n. I doubt it's needed though. I doubt that these lines will be ever read by someone.
