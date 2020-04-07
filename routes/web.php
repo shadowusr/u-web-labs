@@ -12,3 +12,5 @@ Route::get('/tasks/4/create', view('template', ['content' => view('tasks/task-4-
 Route::get('/tasks/4/search', view('template', ['content' => view('tasks/task-4-search')]));
 Route::get('/tasks/4/save', view('template', ['content' => view('tasks/task-4-save')]));
 Route::get('/tasks/4/delete', view('template', ['content' => view('tasks/task-4-delete')]));
+
+Route::get('/tasks/5', view('template', ['content' => view('tasks/task-5')]));
