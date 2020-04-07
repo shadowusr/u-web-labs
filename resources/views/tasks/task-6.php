@@ -67,68 +67,11 @@ HEREDOC;
         <div class="row">
             <div class="col-12" >
                 <h3 class="heading-underlined" data-aos="fade-up">Исходный код</h3>
-                <p data-aos="fade-up">Исходный код страницы доступен на <a href="https://github.com/shadowusr/u-web-labs/tree/master/resources/views/tasks/task-5.php">GitHub</a>.</p>
+                <p data-aos="fade-up">Исходный код страницы доступен на <a href="https://github.com/shadowusr/u-web-labs/tree/master/resources/views/tasks/task-6.php">GitHub</a>.</p>
             </div>
         </div>
     </div>
 </section>
 <style>
-    .task-image {
-        width: 100%;
-        border: 4px solid #a5fde5;
-        margin-top: 20px;
-    }
-    .alert {
-        width: 100%;
-        font-family: Nunito, sans-serif;
-        display: flex;
-        align-items: center;
-        background-color: rgba(60, 54, 199, 0.51);
-        border: 2px solid #4d00ff;
-    }
-
-    .alert > svg {
-        height: 45px;
-        flex-shrink: 0;
-    }
-    .alert > svg > path {
-        fill: rgba(255, 255, 255, .8);
-    }
-
-    .alert > p {
-        margin: 0;
-        margin-left: 20px;
-    }
-
-    .card.dark {
-        margin: 0;
-        background-image: none;
-        background-color: #27325d;
-        border-radius: 5px;
-        padding: 15px;
-        box-shadow: 0px 0px 25px -5px rgba(0,0,0,0.3);
-        border: none;
-    }
-
-    .card.dark h5 {
-        margin: 0;
-    }
-
-    .buttons-container {
-        display: flex;
-    }
-
-    .buttons-container > button {
-        margin-left: 10px;
-    }
-    .buttons-container > button:first-child {
-        margin-left: 0;
-    }
-
-    button.pastel {
-        background: linear-gradient(90deg, rgba(255,146,70,1) 0%, rgba(255,64,201,1) 100%);
-    }
-    button.dark-blue {
-        background: linear-gradient(90deg, rgba(0,106,255,1) 0%, rgba(58,0,177,1) 100%);
-    }
+    
 </style>
