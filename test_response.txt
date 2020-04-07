@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="/files/grafika_favicon.ico" type="image/x-icon" />
+  <title>Использование циклов при построении изображения | Компьютерная графика</title>
+  <link type="text/css" rel="stylesheet" media="all" href="/files/css/css_f9defca3aa914b8bdafa2481b1bab8d2.css" />
+<link type="text/css" rel="stylesheet" media="screen" href="/files/css/css_2b0d6164fab93189159216f27136ecf9.css" />
+    <script type="text/javascript" src="/themes/grafika/jquery.js?b"></script>
+<script type="text/javascript" src="/misc/drupal.js?b"></script>
+<script type="text/javascript" src="/files/languages/ru_8c6ddc66663128bbd16df958217e2e9a.js?b"></script>
+<script type="text/javascript" src="/themes/grafika/script.js?b"></script>
+<script type="text/javascript" src="/themes/grafika/script.responsive.js?b"></script>
+<script type="text/javascript">
+
+jQuery.extend(Drupal.settings, { "basePath": "/" });
+
+</script>
+  
+<meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width">
+<meta content="http://grafika.me/themes/grafika/images/PrnScreen.png" property="og:image">
+
+
+<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!--[if lte IE 7]><link rel="stylesheet" href="/themes/grafika/style.ie7.css" media="screen" /><![endif]-->
+
+  
+</head>
+
+<body class="not-front not-logged-in page-node node-type-lesson no-sidebars">
+
+<div id="gr-main">
+<header class="gr-header">
+
+    <div class="gr-shapes">
+
+            </div>
+<div class="gr-headline">
+  <a href="/" title = "Компьютерная графика">Компьютерная графика</a>
+</div>
+
+<h2 class="gr-slogan" data-left="1.56%">Уроки, алгоритмы, программы, примеры</h2>
+
+
+
+
+<nav class="gr-nav">
+     
+    <ul class=" gr-hmenu "><li class="leaf first"><a href="/" title="Компьютерная графика">Главная</a></li>
+<li class="leaf"><a href="/lectures" title="Статьи по компьютерной графике">Статьи</a></li>
+<li class="leaf"><a href="/lab" title="Задачи для самостоятельной подготовки">Задачи</a></li>
+<li class="leaf"><a href="/lessons" title="Уроки по основам компьютерной графики">Уроки</a></li>
+<li class="leaf"><a href="/tools" title="Инструменты">Инструменты</a></li>
+<li class="leaf"><a href="/demoscene" title="Небольшие демонстрационные программы">Демосцены</a></li>
+<li class="leaf last"><a href="/students/2017" title="Студенты-авторы программ и уроков">Авторы</a></li>
+</ul></nav>
+                    
+</header>
+<div class="gr-sheet clearfix">
+            <div class="gr-layout-wrapper">
+                <div class="gr-content-layout">
+                    <div class="gr-content-layout-row">
+                        <div class="gr-layout-cell gr-sidebar1"><div class="clear-block block block-user" id="block-user-0">
+<div class="gr-block clearfix">
+        <div class="gr-blockheader"><h3 class="t subject">
+  Вход на сайт</h3>
+</div>
+        <div class="gr-blockcontent"><form action="/node/37?destination=node%2F37"  accept-charset="UTF-8" method="post" id="user-login-form">
+<div><div class="form-item" id="edit-name-wrapper">
+ <label for="edit-name">Имя пользователя: <span class="form-required" title="Обязательное поле">*</span></label>
+ <input type="text" maxlength="60" name="name" id="edit-name" size="15" value="" class="form-text required" />
+</div>
+<div class="form-item" id="edit-pass-wrapper">
+ <label for="edit-pass">Пароль: <span class="form-required" title="Обязательное поле">*</span></label>
+ <input type="password" name="pass" id="edit-pass"  maxlength="60"  size="15"  class="form-text required" />
+</div>
+<input type="submit" name="op" id="edit-submit" value="Вход на сайт"  class="form-submit gr-button"/><div class="item-list"><ul><li class="first"><a href="/user/register" title="Создать новую учетную запись пользователя.">Регистрация</a></li>
+<li class="last"><a href="/user/password" title="Запросить новый пароль по электронной почте.">Забыли пароль?</a></li>
+</ul></div><input type="hidden" name="form_build_id" id="form-CPUAkOU1sbX_5ARQtwe_Vn9_FT_LRu_8jM920QnJU6A" value="form-CPUAkOU1sbX_5ARQtwe_Vn9_FT_LRu_8jM920QnJU6A"  />
+<input type="hidden" name="form_id" id="edit-user-login-block" value="user_login_block"  />
+
+</div></form>
+</div>
+</div></div>
+<div class="clear-block block block-block" id="block-block-2">
+<div class="gr-block clearfix">
+        <div class="gr-blockheader"><h3 class="t subject">
+  Материалы по разделам</h3>
+</div>
+        <div class="gr-blockcontent"><div class="ya-site-form ya-site-form_inited_no" onclick="return {'action':'http://grafika.me/search','arrow':false,'bg':'#F8FAFB','fontsize':14,'fg':'#000000','language':'ru','logo':'rb','publicname':'Поиск по сайту Компьютерная графика','suggest':false,'target':'_self','tld':'ru','type':3,'usebigdictionary':true,'searchid':2125932,'webopt':false,'websearch':false,'input_fg':'#000000','input_bg':'#ffffff','input_fontStyle':'normal','input_fontWeight':'normal','input_placeholder':'Поиск материала на сайте','input_placeholderColor':'#cccccc','input_borderColor':'#666666'}"><form action="http://yandex.ru/sitesearch" method="get" target="_self"><input type="hidden" name="searchid" value="2125932"/><input type="hidden" name="l10n" value="ru"/><input type="hidden" name="reqenc" value=""/><input type="search" name="text" value=""/><input type="submit" value="Найти"/></form></div><style type="text/css">.ya-page_js_yes .ya-site-form_inited_no { display: none; }</style><script type="text/javascript">(function(w,d,c){var s=d.createElement('script'),h=d.getElementsByTagName('script')[0],e=d.documentElement;if((' '+e.className+' ').indexOf(' ya-page_js_yes ')===-1){e.className+=' ya-page_js_yes';}s.type='text/javascript';s.async=true;s.charset='utf-8';s.src=(d.location.protocol==='https:'?'https:':'http:')+'//site.yandex.net/v2.0/js/all.js';h.parentNode.insertBefore(s,h);(w[c]||(w[c]=[])).push(function(){Ya.Site.Form.init()})})(window,document,'yandex_site_callbacks');</script>
+<table class="block-category">
+<tr>
+<td>
+<a href="/2D-graphics"><img src="/design/graph2d.png" ></a>
+</td>
+<td>
+<a class="link-category" href="/2D-graphics">Построения<br />на плоскости (2D)</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href="/3D-graphics"><img src="/design/graph3d.jpg" ></a>
+</td>
+<td>
+<a class="link-category" href="/3D-graphics">Графика<br />в пространстве (3D)</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href="/computational-geometry"><img src="/design/vgeom.png"></a>
+</td>
+<td>
+<a class="link-category" href="/computational-geometry">Вычислительная<br />геометрия</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href="/physical-modeling"><img src="/design/phys.png"></a>
+</td>
+<td>
+<a class="link-category" href="/physical-modeling">Физическое<br />моделирование</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href="/fractals"><img src="/design/fract.png"></a>
+</td>
+<td>
+<a class="link-category" href="/fractals">Фрактальная<br />графика</a>
+</td>
+</tr>
+</table></div>
+</div></div>
+<div class="clear-block block block-views" id="block-views-last_comment-block_1">
+<div class="gr-block clearfix">
+        <div class="gr-blockheader"><h3 class="t subject">
+  Новые комментарии</h3>
+</div>
+        <div class="gr-blockcontent"><div class="view view-last-comment view-id-last_comment view-display-id-block_1 view-dom-id-1">
+    
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field-title">
+                <span class="field-content"><a href="/node/96">Подключение OpenGL в Visual Studio 2010</a></span>
+  </div>
+  
+  <div class="views-field-comment">
+                <span class="field-content">Выдаёт ошибку glut32.dll не найден! При том, что он лежит в System32!
+Всё решил) Нужно отправить не в System32, а в System.</span>
+  </div>
+  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field-title">
+                <span class="field-content"><a href="/node/322">Канторово множество на языке Pascal</a></span>
+  </div>
+  
+  <div class="views-field-comment">
+                <span class="field-content">Спасибо за статью. Я не Ваш студент. Но мне она помогла написать функцию для Канторова множества на Python для черепашки:
+
+import turtle
+def kanter(x, y, d):
+&nbsp;&nbsp;&nbsp;&nbsp;if d &gt; 1:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;turtle...</span>
+  </div>
+  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field-title">
+                <span class="field-content"><a href="/node/297">Пример фрактала Жулиа на C#</a></span>
+  </div>
+  
+  <div class="views-field-comment">
+                <span class="field-content">Как реализовать в данном примере границы расчёта?</span>
+  </div>
+  </div>
+  <div class="views-row views-row-4 views-row-even">
+      
+  <div class="views-field-title">
+                <span class="field-content"><a href="/node/21">Как начать работать с графикой в Microsoft C#</a></span>
+  </div>
+  
+  <div class="views-field-comment">
+                <span class="field-content">Спасибо</span>
+  </div>
+  </div>
+  <div class="views-row views-row-5 views-row-odd views-row-last">
+      
+  <div class="views-field-title">
+                <span class="field-content"><a href="/node/297">Пример фрактала Жулиа на C#</a></span>
+  </div>
+  
+  <div class="views-field-comment">
+                <span class="field-content">Спасибо</span>
+  </div>
+  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div> </div>
+</div></div>
+<div class="clear-block block block-block" id="block-block-3">
+<div class="gr-block clearfix">
+        <div class="gr-blockheader"><h3 class="t subject">
+  Счетчики и рейтинг</h3>
+</div>
+        <div class="gr-blockcontent"><noindex>
+<center>
+
+<table border=0 cellpadding=0 cellspacing=0 width=250>
+<tr>
+<td>
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+var _tmr = _tmr || [];
+_tmr.push({id: "2475716", type: "pageView", start: (new Date()).getTime()});
+(function (d, w) {
+   var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+   ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+   var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+   if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+})(document, window);
+</script><noscript><div style="position:absolute;left:-10000px;">
+<img src="//top-fwz1.mail.ru/counter?id=2475716;js=na" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+</div></noscript>
+<!-- //Rating@Mail.ru counter -->
+<!-- Rating@Mail.ru logo -->
+<a href="http://top.mail.ru/jump?from=2475716" target="_blank" rel="nofollow">
+<img src="//top-fwz1.mail.ru/counter?id=2475716;t=467;l=1" 
+style="border:0;" height="31" width="88" alt="Рейтинг@Mail.ru" /></a>
+<!-- //Rating@Mail.ru logo -->
+</td>
+
+<td>
+<!-- Yandex.Metrika informer -->
+<a href="https://metrika.yandex.ru/stat/?id=20377678&amp;from=informer"
+target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/20377678/2_1_FFFFFFFF_EFEFEFFF_0_uniques"
+style="width:80px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (уникальные посетители)" /></a>
+<!-- /Yandex.Metrika informer -->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter20377678 = new Ya.Metrika({
+                    id:20377678,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/20377678" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</td>
+
+<td>
+<!--LiveInternet counter--><script type="text/javascript"><!--
+document.write("<a  rel=nofollow href='//www.liveinternet.ru/click' "+
+"target=_blank><img src='//counter.yadro.ru/hit?t21.10;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet: показано число просмотров за 24"+
+" часа, посетителей за 24 часа и за сегодня' "+
+"border='0' width='88' height='31'><\/a>")
+//--></script><!--/LiveInternet-->
+</td>
+
+</tr>
+</table>
+</center>
+</noindex>
+
+<script type="text/javascript">
+<!--
+var _acic={dataProvider:10};(function(){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src="//www.acint.net/aci.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})()
+//-->
+</script></div>
+</div></div>
+</div>                        <div class="gr-layout-cell gr-content">
+
+
+
+
+<div id="node-37" class="node lesson">
+<article class="gr-post gr-article">
+                                <div class="gr-postmetadataheader">
+                                        <h1 class='gr-postheader'><span class='gr-postheadericon'>Использование циклов при построении изображения</span></h1>
+                                    </div>
+                                                <div class="gr-postheadericons gr-metadata-icons"><span class="gr-postdateicon">12. Февраль 2013 - 16:29</span>&nbsp;|&nbsp;<span class="gr-postauthoricon"><a href="/user/1" title="Информация о пользователе.">admin</a></span></div>
+                <div class="gr-postcontent gr-postcontent-0 clearfix"><div class="gr-article">
+    <div class="field field-type-text field-field-les-soft">
+      <div class="field-label">Среда программирования:&nbsp;</div>
+    <div class="field-items">
+            <div class="field-item odd">
+                    Delphi (Lazarus)        </div>
+        </div>
+</div>
+<p>Построение повторяющихся элементов изображения имеет смысл включать в операторы цикла. Операторы цикла условно можно разделить на циклы по условию и циклы по количеству повторений (циклы-счетчики).</p>
+<p>Когда точно известно количество повторяющихся элементов изображения удобно использовать цикл <strong>for</strong>. </p>
+<p><div class="geshifilter"><pre class="pascal geshifilter-pascal" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">for</span> счетчик<span style="color: #339933;">:=</span>значение <span style="color: #000000; font-weight: bold;">to</span> конечное_значение <span style="color: #000000; font-weight: bold;">do</span> 
+     тело_цикла;
+&nbsp;
+<span style="color: #000000; font-weight: bold;">for</span> счетчик<span style="color: #339933;">:=</span>значение <span style="color: #000000; font-weight: bold;">downto</span> конечное_значение <span style="color: #000000; font-weight: bold;">do</span> 
+     тело_цикла;</pre></div></p>
+<p>При переходе к обработке оператора цикла <strong>for</strong> управляющей переменной <em>счетчик</em> присваивается заданное начальное значение. Затем в цикле выполняется исполнительный оператор (или составной оператор begin..end). Каждый раз при выполнении исполнительного оператора управляющая переменная увеличивается на 1 (для for...to) или уменьшается на 1 (для for...downto). Цикл завершается при достижении управляющей переменной своего конечного значения.</p>
+<p>Пример использования оператора цикла <strong>for</strong> при построении забора из 20 элементов.</p>
+<p><div class="geshifilter"><pre class="pascal geshifilter-pascal" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">procedure</span> TForm1.<span style="color: #0066ee;">Button1Click</span><span style="color: #009900;">&#40;</span>Sender<span style="color: #339933;">:</span> TObject<span style="color: #009900;">&#41;</span>;
+<span style="color: #000000; font-weight: bold;">Var</span> maxX<span style="color: #339933;">,</span> maxY <span style="color: #339933;">:</span> <span style="color: #000066; font-weight: bold;">Integer</span>;
+    i <span style="color: #339933;">:</span> <span style="color: #000066; font-weight: bold;">Integer</span>;
+<span style="color: #000000; font-weight: bold;">begin</span>
+  maxX <span style="color: #339933;">:=</span> PaintBox1.<span style="color: #0066ee;">Width</span>;
+  maxY <span style="color: #339933;">:=</span> PaintBox1.<span style="color: #0066ee;">Height</span>;
+  <span style="color: #666666; font-style: italic;">// Количество повторений</span>
+  <span style="color: #000000; font-weight: bold;">for</span> i <span style="color: #339933;">:=</span> <span style="color: #cc66cc;">1</span> <span style="color: #000000; font-weight: bold;">to</span> <span style="color: #cc66cc;">20</span> <span style="color: #000000; font-weight: bold;">do</span>  <span style="color: #000000; font-weight: bold;">begin</span>
+    <span style="color: #666666; font-style: italic;">// Определение цвета досок забора</span>
+    PaintBox1.<span style="color: #0066ee;">Canvas</span>.<span style="color: #0066ee;">Brush</span>.<span style="color: #0066ee;">Color</span> <span style="color: #339933;">:=</span> RGBToColor<span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">200</span><span style="color: #339933;">,</span><span style="color: #cc66cc;">160</span><span style="color: #339933;">,</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span>;
+    <span style="color: #666666; font-style: italic;">// Отрисовка досок забора</span>
+    PaintBox1.<span style="color: #0066ee;">Canvas</span>.<span style="color: #0066ee;">Rectangle</span><span style="color: #009900;">&#40;</span>i<span style="color: #339933;">*</span><span style="color: #cc66cc;">20</span><span style="color: #339933;">,</span> maxY<span style="color: #339933;">,</span> <span style="color: #cc66cc;">19</span> <span style="color: #339933;">+</span> i<span style="color: #339933;">*</span><span style="color: #cc66cc;">20</span><span style="color: #339933;">,</span> maxY<span style="color: #339933;">-</span><span style="color: #cc66cc;">80</span><span style="color: #009900;">&#41;</span>;
+    <span style="color: #666666; font-style: italic;">// Верхняя шапка забора</span>
+    PaintBox1.<span style="color: #0066ee;">Canvas</span>.<span style="color: #0066ee;">Polygon</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#91;</span>Point<span style="color: #009900;">&#40;</span>i<span style="color: #339933;">*</span><span style="color: #cc66cc;">20</span><span style="color: #339933;">,</span> maxY<span style="color: #339933;">-</span><span style="color: #cc66cc;">80</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> 
+                              Point<span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">10</span> <span style="color: #339933;">+</span> i<span style="color: #339933;">*</span><span style="color: #cc66cc;">20</span><span style="color: #339933;">,</span> maxY<span style="color: #339933;">-</span><span style="color: #cc66cc;">95</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> Point<span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">19</span> <span style="color: #339933;">+</span> i<span style="color: #339933;">*</span><span style="color: #cc66cc;">20</span><span style="color: #339933;">,</span> maxY<span style="color: #339933;">-</span><span style="color: #cc66cc;">80</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span>;
+    <span style="color: #666666; font-style: italic;">// Круглые отверстия в шапке</span>
+    PaintBox1.<span style="color: #0066ee;">Canvas</span>.<span style="color: #0066ee;">Brush</span>.<span style="color: #0066ee;">Color</span> <span style="color: #339933;">:=</span> clWhite;
+    PaintBox1.<span style="color: #0066ee;">Canvas</span>.<span style="color: #0066ee;">Ellipse</span><span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">7</span> <span style="color: #339933;">+</span> i<span style="color: #339933;">*</span><span style="color: #cc66cc;">20</span><span style="color: #339933;">,</span> maxY<span style="color: #339933;">-</span><span style="color: #cc66cc;">82</span><span style="color: #339933;">,</span> <span style="color: #cc66cc;">13</span> <span style="color: #339933;">+</span> i<span style="color: #339933;">*</span><span style="color: #cc66cc;">20</span><span style="color: #339933;">,</span> maxY<span style="color: #339933;">-</span><span style="color: #cc66cc;">88</span><span style="color: #009900;">&#41;</span>;
+  <span style="color: #000000; font-weight: bold;">end</span>;
+  <span style="color: #666666; font-style: italic;">// Поперечные перекладины</span>
+  PaintBox1.<span style="color: #0066ee;">Canvas</span>.<span style="color: #0066ee;">Brush</span>.<span style="color: #0066ee;">Color</span> <span style="color: #339933;">:=</span> RGBToColor<span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">200</span><span style="color: #339933;">,</span><span style="color: #cc66cc;">200</span><span style="color: #339933;">,</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span>;
+  PaintBox1.<span style="color: #0066ee;">Canvas</span>.<span style="color: #0066ee;">Rectangle</span><span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">0</span><span style="color: #339933;">,</span> maxY<span style="color: #339933;">-</span><span style="color: #cc66cc;">20</span><span style="color: #339933;">,</span> <span style="color: #cc66cc;">620</span><span style="color: #339933;">,</span> maxY<span style="color: #339933;">-</span><span style="color: #cc66cc;">25</span><span style="color: #009900;">&#41;</span>;
+  PaintBox1.<span style="color: #0066ee;">Canvas</span>.<span style="color: #0066ee;">Rectangle</span><span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">0</span><span style="color: #339933;">,</span> maxY<span style="color: #339933;">-</span><span style="color: #cc66cc;">55</span><span style="color: #339933;">,</span> <span style="color: #cc66cc;">620</span><span style="color: #339933;">,</span> maxY<span style="color: #339933;">-</span><span style="color: #cc66cc;">60</span><span style="color: #009900;">&#41;</span>;
+<span style="color: #000000; font-weight: bold;">end</span>;</pre></div></p>
+<p><img src="http://grafika.me/files/les_screens/zabor.jpg" width="486" height="423" alt="" title="" /></p>
+<p>Если количество элементов не известно, то можно воспользоваться циклом по условию. Например, строить элементы изображения пока не будет достигнут край экрана (или поля для рисования). Различают циклы с предусловием и с постусловием. Цикл с предусловием </p>
+<p><div class="geshifilter"><pre class="pascal geshifilter-pascal" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">while</span> expression <span style="color: #000000; font-weight: bold;">do</span> statement;</pre></div></p>
+<p>При выполнении этого оператора вначале вычисляется значение логического выражения expression. Если это значение истинно, выполняется оператор statement, затем значение выражения проверяется вновь и т. д., до тех пор, пока выражение не примет значение «ложь». Если выражение принимает значение «ложь» при первой же проверке, то оператор statement не выполняется вообще. </p>
+<p>Пример использования оператора цикла <strong>while</strong> при построении морских волн.</p>
+<p><div class="geshifilter"><pre class="pascal geshifilter-pascal" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">procedure</span> TForm1.<span style="color: #0066ee;">Button1Click</span><span style="color: #009900;">&#40;</span>Sender<span style="color: #339933;">:</span> TObject<span style="color: #009900;">&#41;</span>;
+<span style="color: #000000; font-weight: bold;">Var</span> maxX<span style="color: #339933;">,</span> maxY <span style="color: #339933;">:</span> <span style="color: #000066; font-weight: bold;">Integer</span>;
+    x <span style="color: #339933;">:</span> <span style="color: #000066; font-weight: bold;">Integer</span>;
+<span style="color: #000000; font-weight: bold;">begin</span>
+  maxX <span style="color: #339933;">:=</span> PaintBox1.<span style="color: #0066ee;">Width</span>;
+  maxY <span style="color: #339933;">:=</span> PaintBox1.<span style="color: #0066ee;">Height</span>;
+  <span style="color: #666666; font-style: italic;">// Построение паруса</span>
+  PaintBox1.<span style="color: #0066ee;">Canvas</span>.<span style="color: #0066ee;">Brush</span>.<span style="color: #0066ee;">Color</span> <span style="color: #339933;">:=</span> clYellow;
+  PaintBox1.<span style="color: #0066ee;">Canvas</span>.<span style="color: #0066ee;">Polygon</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#91;</span>Point<span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">250</span><span style="color: #339933;">,</span>maxY<span style="color: #339933;">-</span><span style="color: #cc66cc;">35</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> Point<span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">280</span><span style="color: #339933;">,</span> maxY<span style="color: #339933;">-</span><span style="color: #cc66cc;">250</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> Point<span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">150</span><span style="color: #339933;">,</span> maxY<span style="color: #339933;">-</span><span style="color: #cc66cc;">65</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span>;
+  <span style="color: #666666; font-style: italic;">// Построение корпуса лодки</span>
+  PaintBox1.<span style="color: #0066ee;">Canvas</span>.<span style="color: #0066ee;">Brush</span>.<span style="color: #0066ee;">Color</span> <span style="color: #339933;">:=</span> RGBToColor<span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">150</span><span style="color: #339933;">,</span> <span style="color: #cc66cc;">150</span><span style="color: #339933;">,</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span>;
+  PaintBox1.<span style="color: #0066ee;">Canvas</span>.<span style="color: #0066ee;">Polygon</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#91;</span>Point<span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">50</span><span style="color: #339933;">,</span>maxY<span style="color: #339933;">-</span><span style="color: #cc66cc;">25</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> 
+                            Point<span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">300</span><span style="color: #339933;">,</span>maxY<span style="color: #339933;">-</span><span style="color: #cc66cc;">25</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> Point<span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">340</span><span style="color: #339933;">,</span>maxY<span style="color: #339933;">-</span><span style="color: #cc66cc;">50</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span>;
+  <span style="color: #666666; font-style: italic;">// Построение волн в виде полуокружностей.</span>
+  PaintBox1.<span style="color: #0066ee;">Canvas</span>.<span style="color: #0066ee;">Brush</span>.<span style="color: #0066ee;">Color</span> <span style="color: #339933;">:=</span> clBlue;
+  x<span style="color: #339933;">:=</span><span style="color: #cc66cc;">0</span>;
+  <span style="color: #000000; font-weight: bold;">while</span> x &lt; maxX <span style="color: #000000; font-weight: bold;">do</span> <span style="color: #000000; font-weight: bold;">begin</span>
+    PaintBox1.<span style="color: #0066ee;">Canvas</span>.<span style="color: #0066ee;">Pie</span><span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">0</span> <span style="color: #339933;">+</span> x<span style="color: #339933;">,</span> maxY<span style="color: #339933;">,</span> <span style="color: #cc66cc;">40</span> <span style="color: #339933;">+</span> x<span style="color: #339933;">,</span> maxY<span style="color: #339933;">-</span><span style="color: #cc66cc;">30</span><span style="color: #339933;">,</span> 
+                         <span style="color: #cc66cc;">40</span> <span style="color: #339933;">+</span> x<span style="color: #339933;">,</span> maxY<span style="color: #339933;">-</span><span style="color: #cc66cc;">15</span><span style="color: #339933;">,</span> <span style="color: #cc66cc;">0</span> <span style="color: #339933;">+</span> x<span style="color: #339933;">,</span> maxY<span style="color: #339933;">-</span><span style="color: #cc66cc;">15</span> <span style="color: #009900;">&#41;</span>;
+    x <span style="color: #339933;">:=</span> x<span style="color: #339933;">+</span><span style="color: #cc66cc;">30</span>;
+  <span style="color: #000000; font-weight: bold;">end</span>;
+<span style="color: #000000; font-weight: bold;">end</span>;  </pre></div></p>
+<p><img src="http://grafika.me/files/les_screens/parus.jpg" width="502" height="423" alt="" title="" /></p>
+</div>
+</div>
+<div class="gr-postmetadatafooter">
+                                        <div class="gr-postfootericons gr-metadata-icons"><span class="gr-postcommentsicon"><a href="/user/login?destination=comment%2Freply%2F37%23comment-form">Войдите</a> или <a href="/user/register?destination=comment%2Freply%2F37%23comment-form">зарегистрируйтесь</a>, чтобы комментировать</span>	</div>
+                                    </div>
+                
+
+</article></div>
+
+
+
+
+
+<article class="gr-post gr-article">
+                                
+                                                
+                <div class="gr-postcontent"><div class="breadcrumb gr-postcontent"><a href="/">Главная</a></div></div>
+</article>
+
+</div>
+                    </div>
+                </div>
+            </div><footer class="gr-footer">Copyright © 2012-2019 • <a href="http://grafika.me">Компьютерная графика</a></footer>
+
+    </div>
+</div>
+
+
+</body>
+</html>
