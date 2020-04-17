@@ -12,3 +12,12 @@ function view($name, $args = []) {
     require __DIR__ . '/../resources/views/' . $name . '.php';
     return ob_get_clean();
 }
+
+function escapeObjects($objects) {
+    foreach ($objects as $key => $object) {
+        foreach ($object as $fieldName => $fieldValue) {
+            $objects[$key][$fieldName] = htmlentities($fieldValue, ENT_QUOTES);
+        }
+    }
+    return $objects;
+}

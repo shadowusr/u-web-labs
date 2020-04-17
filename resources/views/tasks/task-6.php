@@ -73,5 +73,5 @@ HEREDOC;
     </div>
 </section>
 <style>
-    
+
 </style>

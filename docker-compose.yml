@@ -23,12 +23,36 @@ services:
       - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
       - php-playground
+
   composer:
     image: composer
     restart: 'no'
     command: 'install'
     volumes:
     - ./:/app
+
+  db:
+    container_name: shadow-web-labs-db
+    image: mysql:latest
+    ports:
+    - 3306:3306
+    expose:
+      - 3306
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootsecret
+      MYSQL_DATABASE: shadow-web-labs
+      MYSQL_USER: local
+      MYSQL_PASSWORD: secret
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - php-playground
+
 networks:
   php-playground:
     driver: bridge
+
+volumes:
+  dbdata:
+    driver: local

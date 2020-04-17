@@ -4,6 +4,7 @@ namespace App;
 
 use App\Routing\Request;
 use App\Facades\Route;
+use Symfony\Component\Dotenv\Dotenv;
 
 class App
 {
@@ -40,6 +41,11 @@ class App
     }
 
     public function handle(Request $request) {
+        $dotenv = new Dotenv();
+        if (file_exists(__DIR__ . '/../.env')) {
+            $dotenv->load(__DIR__ . '/../.env');
+        }
+
         require '../routes/web.php';
 
         if (!isset($_COOKIE['client-id'])) {
@@ -48,6 +54,8 @@ class App
             $_COOKIE['client-id'] = $guid;
             header('Location: ' . $_SERVER['REQUEST_URI']); // Refresh page to init $_COOKIE
         }
+
+
 
         echo Route::resolve($request);
     }

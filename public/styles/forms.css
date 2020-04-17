@@ -52,3 +52,26 @@ form input[type=submit]:active {
     margin-bottom: 9px;
     box-shadow: none;
 }
+
+form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 5px;
+    width: 100%;
+    background-color: #131b3c;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, .2);
+    padding: 5px 10px;
+    transition: all .3s ease-in-out;
+    color: rgba(255, 255, 255, .8);
+}
+
+form select:hover {
+    background-color: #1f2748;
+}
+
+form select:focus {
+    background-color: #131b3c;
+    border: 1px solid #a5fde5;
+    outline: none;
+}
