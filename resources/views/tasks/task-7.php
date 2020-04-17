@@ -1,7 +1,4 @@
 <?php
-
-
-
 $task = [
     'number' => 7,
     'caption' => 'Работа с базой данных',
@@ -16,6 +13,45 @@ $museums = escapeObjects($museums);
 
 $paintings = $db->query('SELECT * FROM paintings LEFT JOIN (SELECT id AS museum_id, name AS museum_name FROM museums) museums ON paintings.museum_id = museums.museum_id;')->fetchAll(PDO::FETCH_ASSOC);
 $paintings = escapeObjects($paintings);
+
+$sqlSnippets = [
+    [
+        'description' => 'Создание таблицы музеев.',
+        'code' => 'CREATE TABLE IF NOT EXISTS museums (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(128) NOT NULL,
+    city VARCHAR(128) NOT NULL,
+    rating INT NOT NULL
+) ENGINE=INNODB;',
+    ],
+    [
+        'description' => 'Создание таблицы картин.',
+        'code' => 'CREATE TABLE IF NOT EXISTS paintings (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(128) NOT NULL,
+    creation_year INT NOT NULL,
+    
+    museum_id INT UNSIGNED NOT NULL,
+    FOREIGN KEY (museum_id) REFERENCES museums(id)
+) ENGINE=INNODB;',
+    ],
+    [
+        'description' => 'Выборка музеев.',
+        'code' => 'SELECT * FROM museums WHERE name LIKE :name AND rating >= :rating',
+    ],
+    [
+        'description' => 'Выборка картин.',
+        'code' => 'SELECT * FROM paintings LEFT JOIN (SELECT id AS museum_id, name AS museum_name FROM museums) museums ON paintings.museum_id = museums.museum_id WHERE name LIKE :name AND paintings.museum_id = :museum_id',
+    ],
+    [
+        'description' => 'Создание картины.',
+        'code' => 'INSERT INTO paintings (name, museum_id, creation_year) VALUES (:name, :museum_id, :creation_year)',
+    ],
+    [
+        'description' => 'Удаление музея.',
+        'code' => 'DELETE FROM museums WHERE id = :id',
+    ],
+]
 
 ?>
 
@@ -40,6 +76,14 @@ HEREDOC;
 
             <div class="col-12" data-aos="fade-up">
                 <h3 class="heading-underlined">Результат</h3>
+            </div>
+            <div class="col-12" data-aos="fade-up">
+                <h6>Использованный SQL</h6>
+                <?php
+                foreach ($sqlSnippets as $sqlSnippet) {
+                    echo "<p>{$sqlSnippet['description']}</p><pre><code>{$sqlSnippet['code']}</code></pre>";
+                }
+                ?>
             </div>
             <div class="col-12">
                 <div class="card-form" data-aos="fade-up">
@@ -230,7 +274,7 @@ HEREDOC;
         <div class="row">
             <div class="col-12" >
                 <h3 class="heading-underlined" data-aos="fade-up">Исходный код</h3>
-                <p data-aos="fade-up">Исходный код страницы доступен на <a href="https://github.com/shadowusr/u-web-labs/tree/master/resources/views/tasks/task-4.php">GitHub</a>.</p>
+                <p data-aos="fade-up">Исходный код страницы доступен на <a href="https://github.com/shadowusr/u-web-labs/tree/master/resources/views/tasks/task-7.php">GitHub</a>.</p>
             </div>
         </div>
     </div>
