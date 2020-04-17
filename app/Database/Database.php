@@ -14,7 +14,7 @@ class Database
     public static function connect() {
         if (!self::$pdo) {
 
-            if (isset($_ENV['APP_ENV']) && $_ENV['APP_ENV'] == 'local') {
+            if (isset($_ENV['APP_ENV']) && $_ENV['APP_ENV'] == 'debug') {
                 self::$pdo = new \PDO("mysql:host=shadow-web-labs-db;port=3306;user=local;password=secret;dbname=shadow-web-labs");
                 self::$pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             } else {

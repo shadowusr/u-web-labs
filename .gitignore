@@ -3,6 +3,8 @@
 /node_modules
 /vendor
 
+.env
+
 # Temp files
 /resources/files
 /public/images/task-5-image.jpg
