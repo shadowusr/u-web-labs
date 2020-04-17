@@ -17,7 +17,7 @@
   },
   "scripts": {
     "post-install-cmd": [
-      "App\\Database\\Task7CreateTables::create()"
+      "App\\Database\\Task7CreateTables::create"
     ]
   }
 }
