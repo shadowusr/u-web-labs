@@ -24,3 +24,8 @@ Route::get('/tasks/7/museums/search', view('template', ['content' => view('tasks
 Route::get('/tasks/7/paintings/search', view('template', ['content' => view('tasks/task-7-paintings-search')]));
 Route::get('/tasks/7/museums/delete', view('template', ['content' => view('tasks/task-7-museums-delete')]));
 Route::get('/tasks/7/paintings/delete', view('template', ['content' => view('tasks/task-7-paintings-delete')]));
+
+Route::get('/tasks/8', view('template', ['content' => view('tasks/task-8')]));
+Route::get('/tasks/8/test', view('template', ['content' => view('tasks/task-8-test')]));
+
+Route::get('/tasks/9', view('template', ['content' => view('tasks/task-9')]));
