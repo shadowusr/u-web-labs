@@ -29,3 +29,5 @@ Route::get('/tasks/8', view('template', ['content' => view('tasks/task-8')]));
 Route::get('/tasks/8/test', view('template', ['content' => view('tasks/task-8-test')]));
 
 Route::get('/tasks/9', view('template', ['content' => view('tasks/task-9')]));
+
+Route::get('/tasks/10', view('template', ['content' => view('tasks/task-10')]));
